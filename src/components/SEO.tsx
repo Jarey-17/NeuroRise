@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import type { SEOProps } from "../types";
+import { SEO_DATA } from "../constants";
 
 export default function SEO({
-  title = "Dra. Dina Reyes | Fisiatra y Logopedia",
-  description = "Recupera movilidad, alivia dolor crónico y mejora tu calidad de vida con tratamientos humanos y no invasivos.",
+  title = SEO_DATA.title,
+  description = SEO_DATA.description,
   image = "/Logo-azul-title.svg",
   url = "http://localhost:5173/",
 }: SEOProps) {

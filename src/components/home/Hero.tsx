@@ -1,4 +1,5 @@
 import React from "react";
+import { HERO_DATA } from "../../constants";
 
 const Hero = () => {
   return (
@@ -8,66 +9,51 @@ const Hero = () => {
           {/* Text Content */}
           <div className="mb-12 lg:mb-0 text-center lg:text-left">
             <span className="text-secondary font-semibold tracking-wider uppercase text-sm mb-4 block">
-              Bienestar Integral
+              {HERO_DATA.badge}
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl text-secondary font-neulis leading-tight mb-6">
-              Recupera tu <span className="text-primary">libertad</span> y vive
-              sin limitaciones.
+              {HERO_DATA.titlePrimary}
+              <span className="text-primary">{HERO_DATA.titleHighlight}</span>
+              {HERO_DATA.titleSecondary}
             </h1>
             <p className="text-lg text-secondary/80 mb-8 max-w-2xl mx-auto lg:mx-0 font-poppins">
-              Tratamientos no invasivos para todas las edades. Empatía,
-              profesionalismo y educación para que retomes el control de tu
-              cuerpo, ya sea presencial o desde casa.
+              {HERO_DATA.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
                 href="#contacto"
                 className="bg-primary text-white px-8 py-3.5 rounded-full font-medium hover:bg-opacity-90 transition-all shadow-lg text-lg"
               >
-                Agenda tu cita presencial
+                {HERO_DATA.ctaPrimary}
               </a>
               <a
                 href="#online"
                 className="bg-white text-secondary border-2 border-secondary px-8 py-3.5 rounded-full font-medium hover:bg-secondary hover:text-white transition-all text-lg mb-4 sm:mb-0"
               >
-                Terapia Online (Nacional)
+                {HERO_DATA.ctaSecondary}
               </a>
             </div>
 
             {/* Trust Indicators */}
             <div className="mt-10 flex items-center justify-center lg:justify-start gap-6 text-sm text-secondary/70">
-              <div className="flex items-center gap-2">
-                <svg
-                  className="w-5 h-5 text-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  ></path>
-                </svg>
-                <span>Atención Empática</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg
-                  className="w-5 h-5 text-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  ></path>
-                </svg>
-                <span>Para todas las edades (0-65)</span>
-              </div>
+              {HERO_DATA.trustIndicators.map((indicator, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <svg
+                    className="w-5 h-5 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  <span>{indicator}</span>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -98,9 +84,11 @@ const Hero = () => {
                 </svg>
               </div>
               <div>
-                <p className="font-bold text-secondary">+1000</p>
+                <p className="font-bold text-secondary">
+                  {HERO_DATA.stats.number}
+                </p>
                 <p className="text-xs text-secondary/70">
-                  Pacientes recuperados
+                  {HERO_DATA.stats.label}
                 </p>
               </div>
             </div>

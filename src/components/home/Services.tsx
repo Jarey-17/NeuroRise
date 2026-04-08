@@ -1,11 +1,11 @@
 import React from "react";
+import { SERVICES_DATA } from "../../constants";
 
 const Services = () => {
   const services = [
     {
-      title: "Fisiatría Integral",
-      description:
-        "Evaluación y tratamiento no invasivo para recuperar la movilidad perdida por lesiones musculares, articulares o neurológicas.",
+      title: SERVICES_DATA.servicesList[0].title,
+      description: SERVICES_DATA.servicesList[0].description,
       icon: (
         <svg
           className="w-8 h-8 text-primary"
@@ -24,9 +24,8 @@ const Services = () => {
       ),
     },
     {
-      title: "Logopedia",
-      description:
-        "Tratamientos empáticos y pacientes para superar trastornos del habla, lenguaje y la comunicación en niños y adultos.",
+      title: SERVICES_DATA.servicesList[1].title,
+      description: SERVICES_DATA.servicesList[1].description,
       icon: (
         <svg
           className="w-8 h-8 text-secondary"
@@ -45,9 +44,8 @@ const Services = () => {
       ),
     },
     {
-      title: "Terapia Online",
-      description:
-        "Consultas accesibles sin importar dónde estés (Nivel Nacional). Recibe orientación, ejercicios terapéuticos y seguimiento sin salir de casa.",
+      title: SERVICES_DATA.servicesList[2].title,
+      description: SERVICES_DATA.servicesList[2].description,
       icon: (
         <svg
           className="w-8 h-8 text-primary"
@@ -66,9 +64,8 @@ const Services = () => {
       ),
     },
     {
-      title: "Intervención Temprana",
-      description:
-        "Atención a recién nacidos y niños (0-12 años) con enfoque respetuoso para potenciar su desarrollo psicomotor y cognitivo natural.",
+      title: SERVICES_DATA.servicesList[3].title,
+      description: SERVICES_DATA.servicesList[3].description,
       icon: (
         <svg
           className="w-8 h-8 text-secondary"
@@ -93,11 +90,11 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl text-secondary font-neulis mb-4">
-            Acompañamiento <span className="text-primary">Especializado</span>
+            {SERVICES_DATA.badge}{" "}
+            <span className="text-primary">{SERVICES_DATA.badgeHighlight}</span>
           </h2>
           <p className="text-lg text-secondary/80 font-poppins">
-            Un enfoque humano y profesional orientado a tratar la raíz del dolor
-            o limitación, sin fricciones y a tu ritmo.
+            {SERVICES_DATA.description}
           </p>
         </div>
 
